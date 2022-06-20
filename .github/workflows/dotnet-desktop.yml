@@ -25,14 +25,14 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
 
     - name: Restore Packages
-      run: nuget restore SafetyKatz.sln
+      run: nuget restore SharpView.sln
 
     - name: Create folder
       run: |
           mkdir -p 'D:/outputrel/outputrel'
 
     - name: Build solution
-      run: msbuild SafetyKatz.sln -t:rebuild -property:Configuration=Release -verbosity:diag /p:OutputPath='D:/outputrel/outputrel'
+      run: msbuild SharpView.sln -t:rebuild -property:Configuration=Release -verbosity:diag /p:OutputPath='D:/outputrel/outputrel'
       
     - name: Upload artifact
       uses: actions/upload-artifact@v2
